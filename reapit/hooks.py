@@ -124,6 +124,21 @@ app_license = "MIT"
 #	]
 # }
 
+override_doctype_class = {
+	"Stock Entry": "reapit.overrides.CustomStockEntry"
+}
+
+doc_events = {
+	"Item": {
+		"before_save": "reapit.tasks.sync_item",
+		"on_trash": "reapit.tasks.sync_item"
+	},
+	"Stock Entry": {
+		"on_submit": "reapit.tasks.attach_pdf"
+	}
+}
+
+
 # Testing
 # -------
 
