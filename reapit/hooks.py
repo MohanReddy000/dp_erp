@@ -80,7 +80,8 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 override_doctype_class = {
-	"Stock Entry": "reapit.overrides.CustomStockEntry"
+	"Stock Entry": "reapit.overrides.CustomStockEntry",
+	"Serial No": "reapit.overrides.CustomSerialNo"
 }
 
 doc_events = {
